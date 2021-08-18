@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <script lang="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="/simple-peer/simplepeer.min.js"></script>
+    <style>
+        .main-wrapper{
+            display: flex;
+            flex-direction: column;
+            height: 95vh;  
+        }
+        .containers {
+            display: flex;
+            align-self: center;            
+        }
+
+        .vid {
+            flex: 0 1 auto;
+            height: 125px;
+            border-radius: 5px;
+            margin: 0 2 0 2;
+        }
+
+        .settings {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+
+        .sharescreen {
+            border-style:ridge;
+            border-radius: 5px;
+            flex: 1;
+            height: 72vh;
+            margin: 10 0 15 0;
+        }
+
+        .control {
+            display: flex;
+            align-self: center;   
+            vertical-align: middle;         
+        }
+
+        #muteButton {
+            cursor: pointer;
+        }
+
+        #vidButton {
+            cursor: pointer;
+        }
+
+        #ssButton {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body class="main-wrapper">
+    
+        <div id="videos" class="containers">
+            <video id="localVideo" class="vid" autoplay muted></video>
+            <video id=""></video>
+        </div>
+        
+
+
+        <video id="sharescreen" class="sharescreen"></video>
+        
+
+        
+        <div id="control" class="control">
+            <!--<button id="switchButton" class="settings" onclick="switchMedia()">Switch
+                Camera</button>-->
+            <button id="muteButton" onclick="toggleMute()">
+                <img id="micOn" src="images\micon.png" height="26" width="26"/>
+                <img id="micOff" src="images\micoff.png" height="26" width="26" style="display: none;"/>
+            </button>
+            <button id="vidButton" onclick="toggleVid()">
+                <img id="vidOn" src="images\vidon.png" height="26" width="26"/>
+                <img id="vidOff" src="images\vidoff.png" height="26" width="26" style="display: none;"/>
+            </button>
+            <button id="ssButton">
+                <img id="shareOff" src="images\shareoff.png" height="26" width="26" onclick="setScreen()"/>
+                <img id="shareOn" src="images\shareon.png" height="26" width="26" style="display: none;" onclick="stopShare()"/>
+            </button>
+        </div>
+    
+</body>
+<footer>
+    <script src='/js/main.js' lang="text/javascript"></script>
+</footer>
+
+</html>
