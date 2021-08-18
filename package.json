@@ -9,6 +9,7 @@
     "gh-pages": "^3.2.3",
     "httpolyglot": "^0.1.2",
     "nodemon": "^2.0.12",
+    "react": "^17.0.2",
     "simple-peer": "^9.7.0",
     "socket.io": "^2.3.0"
   },
